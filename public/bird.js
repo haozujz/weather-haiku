@@ -185,7 +185,7 @@ class Bird {
 async function animateBirds(isFirst = false) {
   abortKey++
   const savedKey = abortKey
-  const type = Math.floor(Math.random() * 3)
+  const type = Math.floor(Math.random() * 4)
   
   function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -205,15 +205,20 @@ async function animateBirds(isFirst = false) {
   } else if (type==1) {
     for (let i = 0; i < 40; i++) {
       if (savedKey != abortKey) {break}
-      birds[i] = new Bird(Math.floor(Math.random() * 800) + 50, height - 250 - Math.floor(Math.random() * 100), 1, 1);
+      birds[i] = new Bird(Math.floor(Math.random() * 800), height - 250 - Math.floor(Math.random() * 100), 1, 1);
       await sleep(120);
     }
-  } else {
+  } else if (type==2) {
     for (let i = 0; i < 40; i++) {
       if (savedKey != abortKey) {break}
       birds[i] = new Bird(width/2, height - 270, 3, i%2 == 0 ? 1 : -1);
       await sleep(120);
     }
+  } else if (type==3) {
+    for (let i = 0; i < 40; i++) {
+      if (savedKey != abortKey) {break}
+      birds[i] = new Bird(width - 50, height - 250, 3, -1)
+      await sleep(120);
+    }
   }
-
 }
