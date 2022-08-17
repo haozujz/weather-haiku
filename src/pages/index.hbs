@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+
+  </head>
+  <body>
+    <script src="sketch.js"></script>
+    <script src="snow.js"></script>
+    <script src="grass.js"></script>
+    <script src="rain.js"></script>
+    <script src="cloud.js"></script>
+    <script src="branch.js"></script>
+    <script src="twig.js"></script>
+    <script src="leaf.js"></script>
+    <script src="bird.js"></script>
+    
+    <div class="controlPanel">
+      <div class="titleContainer">Weather Haiku</div>
+      <div class="titleContainer" style="top: 60px; left: 10px">Generate Haiku</div>
+      <div class="titleContainer" style="top: 260px; left: 10px">Manipulate Scenery</div>
+      <div class="titleContainer" style="top: 310px; left: 70px">Sun</div>
+      <div class="titleContainer" style="top: 310px; left: 220px">Tree</div>
+      <div class="titleContainer" style="top: 310px; left: 360px">Leaf color</div>
+      <div id="snow-rain-title" class="titleContainer" style="top: 405px; left: 10px">Snow/Rain Lv:0</div>
+      <div id = "grass-title" class="titleContainer" style="top: 515px; left: 40px">Grass Lv:0</div>
+      <div class="titleContainer" style="top: 625px; left: 66px">Birds</div>
+      <div class="titleContainer" style="top: 460px; left: 185px">Branch color</div>
+      <div class="titleContainer" style="top: 560px; left: 185px">Tree heading</div>
+      <input id="form-a" type="text" minlength="1" maxlength="150" placeholder="Ask a question or ponder a topic!" required="true"/>
+      <button id="btn-submit" onclick="submit()"><img class="feather" src="https://cdn.glitch.global/0a1c6430-480a-4e34-bd3a-7a33a496eead/feather.svg?v=1660381390346"/></button>
+      <input id="form-b" type="password" minlength="1" maxlength="100" placeholder="Enter an openai api key" required="true"/>
+      <div id="output"></div>
+    </div>
+    
+  </body>
+</html>
+
+<script>
+  let elem = document.querySelector('#form-a');
+  
+  elem.addEventListener("keydown", ({key}) => {
+    if (key === "Enter") {
+        submit();
+    }
+  })
+  
+  async function submit() {
+    let input = document.querySelector('#form-a').value;
+    let key = document.querySelector('#form-b').value;
+    let outputElem = document.querySelector('#output');
+    let temp = 1.0 - (max(b, c) * 0.2)
+
+    let options = {
+      method: 'POST',
+      url: '/haiku',
+      data: {
+        text: input,
+        key: key,
+        temp: temp
+      }
+    }; 
+    
+    await axios.request(options) 
+      .then(res => {
+        outputElem.textContent = res.data}) 
+      .catch(e => {
+        outputElem.textContent = e}); 
+  }
+</script>
