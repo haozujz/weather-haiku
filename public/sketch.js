@@ -50,9 +50,9 @@ async function setup() {
   sliderTreeG.position(1245, 400);
   sliderTreeB = createSlider(0, 100, 100);
   sliderTreeB.position(1245, 450);
-  sliderTreeTrunkColor = createSlider(20, 200, 200); //85
+  sliderTreeTrunkColor = createSlider(20, 200, 75); 
   sliderTreeTrunkColor.position(1080, 500);
-  sliderTreeRotation = createSlider(1, 4.5, 2, 0.05);
+  sliderTreeRotation = createSlider(1, 4.5, 2, 0.05); 
   sliderTreeRotation.position(1080, 350);
   sliderTreeDepthRotation = createSlider(0, 2 * PI, 0, 0.01);
   sliderTreeDepthRotation.position(1080, 600);
