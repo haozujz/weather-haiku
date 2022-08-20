@@ -2,12 +2,13 @@
 
 https://weather-haiku.glitch.me/
 
-Haiku generator, answers user input with a short-form poem consisting of phonetic units or syllables in a 5-7-5 pattern. Output can be influenced pre-prediction by the state of the canvas eg. rain/snow level, sun position etc.
+Haiku generator, answers user input with a short-form poem consisting of phonetic units or syllables in a 5-7-5 pattern. Output can be influenced pre-prediction by the state of the canvas eg. rain/snow level, sun position etc.  
+3D tree-generator with fractal recursion.
 
 ## Notes
 
 Demonstrative proof-of-concept only, do not submit your api key without understanding the risks!   
-The newer text-davinci models exhibit greater understanding of syllables with few training samples whereas older models required an assortment of additional labels. Conversely, including such additional labels in the newer model resulted in poorer output than an older model.
+The newer text-davinci models exhibit greater understanding of syllables with few training samples whereas older models required an assortment of additional labels. Conversely, feeding such additional labels into the newer model resulted in poorer output than an older model.
 
 ## Potential updates
 
