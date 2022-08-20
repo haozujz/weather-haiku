@@ -10,7 +10,7 @@ Node, Fastify, Axios, OpenAI, GPT-3.
 ## Notes
 
 Demonstrative proof-of-concept only, do not submit your api key without understanding the risks!   
-The newer text-davinci models exhibit greater understanding of syllables with few training samples whereas older models required an assortment of additional labels. Conversely, feeding such additional labels into the newer model resulted in poorer output than an older model.
+The newer text-davinci models exhibit greater understanding of syllables with few training samples whereas older models required an assortment of additional labels. Conversely, feeding such additional labels into the newer model results in poorer output than an older model.
 
 ## Potential updates
 
