@@ -16,5 +16,5 @@ The newer text-davinci models exhibit greater understanding of syllables with fe
 
 - Fine-tune model with haiku datasets. 
 - Experiment with lower-cost base models. 
-- Expand the influence of canvas states to include semantics.
+- Expand the influence of canvas variables to include semantics.
 - Post-process output to arbitrarily conform to 5-7-5 pattern: eg. convert output into true phonetic units, adjust phrases/words accordingly to 'fix' model output and ensure 5-7-5 pattern.
