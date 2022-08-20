@@ -3,7 +3,8 @@
 https://weather-haiku.glitch.me/
 
 Haiku generator, answers user input with a short-form poem consisting of phonetic units or syllables in a 5-7-5 pattern. Output can be influenced pre-prediction by the state of the canvas eg. rain/snow level, sun position etc.  
-3D tree-generator with fractal recursion.
+3D tree-generator with fractal recursion.  
+Node, Fastify, Axios, OpenAI, GPT-3. 
 
 ## Notes
 
