@@ -33,6 +33,7 @@
       <input id="form-a" type="text" minlength="1" maxlength="150" placeholder="Ask a question or ponder a topic!" required="true"/>
       <button id="btn-submit" onclick="submit()"><img class="feather" src="https://cdn.glitch.global/0a1c6430-480a-4e34-bd3a-7a33a496eead/feather.svg?v=1660381390346"/></button>
       <input id="form-b" type="password" minlength="1" maxlength="100" placeholder="Enter an openai api key" required="true"/>
+      <button id="btn-random" onclick="randomHaiku()"><img class="users" src="https://cdn.glitch.global/0a1c6430-480a-4e34-bd3a-7a33a496eead/users.svg?v=1664678516914"/>See what other haikus have been written!</button>
       <div id="output"></div>
     </div>
     
@@ -53,7 +54,11 @@
     let key = document.querySelector('#form-b').value;
     let outputElem = document.querySelector('#output');
     let temp = 1.0 - (max(b, c) * 0.2)
+    let haiku
 
+    if (key==='') {outputElem.textContent = 'Requires an Openai api key!'; return;}
+    else if (input==='') {outputElem.textContent = 'Enter a prompt!'; return;}
+    
     let options = {
       method: 'POST',
       url: '/haiku',
@@ -66,8 +71,40 @@
     
     await axios.request(options) 
       .then(res => {
+        haiku = res.data
         outputElem.textContent = res.data}) 
       .catch(e => {
+        outputElem.textContent = e});
+    
+    if (!haiku) {return}
+          
+    let options2 = {
+      method: 'POST',
+      url: '/newHaiku',
+      data: {
+        prompt: input,
+        haiku: haiku
+      }
+    }; 
+    
+    axios.request(options2) 
+  };
+  
+  async function randomHaiku() {
+    let inputElem = document.querySelector('#form-a');
+    let outputElem = document.querySelector('#output');
+    
+    let options = {
+      method: 'GET',
+      url: '/randomHaiku',
+    };
+    
+    await axios.request(options) 
+      .then(res => {
+        print('haiku loaded')
+        outputElem.textContent = res.data.haiku;
+        inputElem.value = res.data.prompt;}) 
+      .catch(e => {
         outputElem.textContent = e}); 
-  }
+  };
 </script>
