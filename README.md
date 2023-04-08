@@ -20,3 +20,7 @@ The newer text-davinci models exhibit greater understanding of syllables with fe
 - Experiment with lower-cost base models. 
 - Expand the influence of canvas variables to encompass semantics.
 - Post-process output to arbitrarily conform to 5-7-5 pattern: eg. convert output into true phonetic units, adjust phrases/words accordingly to 'fix' model output and ensure 5-7-5 pattern.
+
+## Snippet
+
+![pic](https://user-images.githubusercontent.com/79493809/230722453-3b6897b8-bf7f-4497-8735-86d96c4eed42.png)
