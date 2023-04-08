@@ -23,4 +23,5 @@ The newer text-davinci models exhibit greater understanding of syllables with fe
 
 ## Snippet
 
-![pic](https://user-images.githubusercontent.com/79493809/230722453-3b6897b8-bf7f-4497-8735-86d96c4eed42.png)
+![pic](https://user-images.githubusercontent.com/79493809/230724894-45c23f1d-3416-4aaa-af14-4c2be9f27604.png)
+
